@@ -553,10 +553,10 @@ h2 {
   width: 100%;
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
-
   opacity: 0;
   visibility: hidden;
-  transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-open {
@@ -572,7 +572,7 @@ h2 {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 408px;
-  height: 584px;
+  min-height: 584px;
   padding: 72px 24px 24px 24px;
   background-color: #fcfcfc;
   border-radius: 4px;
@@ -602,6 +602,7 @@ h2 {
 .modal-close-button:focus {
   background-color: #404bbf;
   border: none;
+  fill: #ffffff;
 }
 
 .modal-close-button:hover .modal-close-button-icon,
@@ -653,14 +654,14 @@ h2 {
   display: block;
   font-weight: 400;
   font-size: 12px;
-  line-height: 1.16667;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   color: #8e8f99;
   margin-bottom: 4px;
 }
 
 .review-form-field-wrapper {
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 .review-form-input-wrapper {
   position: relative;
@@ -687,6 +688,8 @@ h2 {
   height: 120px;
   background-color: transparent;
   resize: none;
+  color: rgba(46, 47, 66, 0.4);
+  outline: transparent;
   padding: 8px 16px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -702,7 +705,7 @@ h2 {
 
 .review-form-checkbox-label {
   font-size: 12px;
-  line-height: 1.16667;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   color: #8e8f99;
 }
@@ -724,12 +727,16 @@ h2 {
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+/* .review-form-privacy-checkbox.review-form-privacy-checkbox:checked {
+  width: 16px;
+  height: 16px;
+} */
 
 .review-form-privacy-checkbox:checked
   + .review-form-checkbox-label
   .review-form-own-checkbox {
   background-color: #404bbf;
-  fill: #fff;
+  fill: #f4f4fd;
   border: none;
 }
 
